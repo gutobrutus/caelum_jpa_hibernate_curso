@@ -8,8 +8,6 @@
 		<!-- Implementacao do JPA2, no nosso caso Hibernate -->
 		<provider>org.hibernate.ejb.HibernatePersistence</provider>
 
-		<class>br.com.caelum.financas.modelo.Conta</class>
-
 		<properties>
 			<!-- Propriedades JDBC -->
 			<property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver" />
