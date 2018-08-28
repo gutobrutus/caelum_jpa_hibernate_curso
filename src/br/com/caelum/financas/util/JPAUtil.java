@@ -5,9 +5,15 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
 public class JPAUtil {
-	private static final EntityManagerFactory factory = Persistence.createEntityManagerFactory("controlefinancas");
+	private static final EntityManagerFactory emf = Persistence.createEntityManagerFactory("controlefinancas");
 	
 	public EntityManager getEntityManager() {
-		return factory.createEntityManager();
+		return emf.createEntityManager();
+	}
+	
+	public void closeFactory() {
+		if (emf != null) {
+			emf.close();
+		}
 	}
 }
