@@ -16,10 +16,10 @@ public class TestaInsereConta {
 		EntityManager manager = new JPAUtil().getEntityManager();
 		
 		Conta conta = new Conta();
-		conta.setTitular("Vanessa Trópico e Silva");
-		conta.setBanco("Itaú");
-		conta.setNumero("2015-7");
-		conta.setAgencia("3262");
+		conta.setTitular("Augusto Silva Ribeiro");
+		conta.setBanco("Banco do Brasil");
+		conta.setNumero("1648-5");
+		conta.setAgencia("5230665-2");
 		
 		ContaDao dao = new ContaDao(manager);
 		
