@@ -1,9 +1,10 @@
-package br.com.caelum.financas.financas;
+package br.com.caelum.financas.teste;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
+import br.com.caelum.financas.dao.ContaDao;
 import br.com.caelum.financas.modelo.Conta;
 import br.com.caelum.financas.util.JPAUtil;
 
@@ -15,13 +16,15 @@ public class TestaInsereConta {
 		EntityManager manager = new JPAUtil().getEntityManager();
 		
 		Conta conta = new Conta();
-		conta.setTitular("Maria Clara Ribeiro");
-		conta.setBanco("Caixa Econômica Federal");
-		conta.setNumero("1536-7");
-		conta.setAgencia("14362");
+		conta.setTitular("Vanessa Trópico e Silva");
+		conta.setBanco("Itaú");
+		conta.setNumero("2015-7");
+		conta.setAgencia("3262");
+		
+		ContaDao dao = new ContaDao(manager);
 		
 		manager.getTransaction().begin();
-		manager.persist(conta);
+		dao.salva(conta);
 		manager.getTransaction().commit();
 		manager.close();
 		long fim = System.currentTimeMillis();
